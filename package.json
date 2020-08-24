@@ -1,0 +1,22 @@
+{
+  "name": "telco.colorcoder",
+  "version": "1.0.0",
+  "description": "The 25-pair color code, is used to identify wires in telecommunications cables.\r Different codes are used for wire leads on devices such as transformers or in building wiring.\r For more details refer to [This Wiki](https://en.wikipedia.org/wiki/25-pair_color_code).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bootjscr/TelCo.ColorCoder.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bootjscr/TelCo.ColorCoder/issues"
+  },
+  "homepage": "https://github.com/bootjscr/TelCo.ColorCoder#readme",
+  "dependencies": {
+    "chai": "^4.2.0"
+  }
+}
