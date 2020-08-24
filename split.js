@@ -32,10 +32,10 @@ function testColorToNumber(majorColor, minorColor, expectedNumber) {
 
 
 
-console.log("Printing the manual..........");
+console.log("Printing the manual........");
 console.log();
 ToString();
-console.log("Manual Printed..........");
+console.log("Manual Printed........");
 console.log();
 
 console.log("color coder");
