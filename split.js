@@ -3,6 +3,18 @@ const expect = require('chai').expect;
 const indexref = require("./index")
 
 
+function ToString(){
+
+    console.log("PairNo" + " --> " + "(" + "major"+ " , " + "minor" + ")")
+    var i;
+    for(i=1;i<26;i++)
+    {
+        const colorpair =  indexref.GetColorFromPairNumber(i);
+        console.log(i + " --> " + "(" + colorpair.major + " , " + colorpair.minor + ")")
+    }
+    
+    }
+
 
 function testNumberToPair(number, expectedMajor, expectedMinor) {
     const pairOfColors = indexref.GetColorFromPairNumber(number);
@@ -16,6 +28,15 @@ function testColorToNumber(majorColor, minorColor, expectedNumber) {
     console.log(`${majorColor} ${minorColor} = ${pairNumber}`);
     expect(pairNumber).to.equal(expectedNumber);
 }
+
+
+
+
+console.log("Printing the manual..........");
+console.log();
+ToString();
+console.log("Manual Printed..........");
+console.log();
 
 console.log("color coder");
 testNumberToPair(4, "white", "brown");
