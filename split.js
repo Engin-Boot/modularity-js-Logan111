@@ -16,7 +16,6 @@ function testColorToNumber(majorColor, minorColor, expectedNumber) {
     expect(pairNumber).to.equal(expectedNumber);
 }
 
-
 console.log("Printing the manual..........");
 console.log();
 indexref.ToString();
