@@ -40,4 +40,24 @@ function GetPairNumberFromColors(majorColor, minorColor) {
     return majorIndex * MinorColors.length + minorIndex + 1;
 }
 
-module.exports = {GetColorFromPairNumber,GetPairNumberFromColors}
+function ToString(){
+
+    console.log("PairNo" + " --> " + "(" + "major"+ " , " + "minor" + ")") //format of priinting color codes
+    
+    let manual_entries = (MajorColors.length) * (MinorColors.length); //computes the length dynamically
+
+    let manual_string = " "; //here the complete manual gets concatinated
+    
+    for(let pair_num=1 ; pair_num<= manual_entries; pair_num++)
+    {
+        const colorpair =  GetColorFromPairNumber(pair_num);
+
+        manual_string = manual_string + pair_num + " - " + colorpair.major + " , " + colorpair.minor + " \n" ;
+        console.log(pair_num + " --> " + "(" + colorpair.major + " , " + colorpair.minor + ")")
+    }
+
+    console.log(manual_string); //printing the concatinated manual stored in the form of a string
+}
+
+
+module.exports = {GetColorFromPairNumber,GetPairNumberFromColors,ToString}
