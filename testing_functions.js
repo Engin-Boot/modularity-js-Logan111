@@ -13,7 +13,6 @@ function testColorToNumber(majorColor, minorColor, expectedNumber) {
     console.log(`${majorColor} ${minorColor} = ${pairNumber}`);
     expect(pairNumber).to.equal(expectedNumber);
 }
-
 console.log("Printing the manual..........");
 console.log();
 indexref.ToString();
