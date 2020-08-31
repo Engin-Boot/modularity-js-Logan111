@@ -36,7 +36,6 @@ function GetPairNumberFromColors(majorColor, minorColor) {
     }
     return majorIndex * MinorColors.length + minorIndex + 1;
 }
-
 function ToString(){ 
     let manual_entries = (MajorColors.length) * (MinorColors.length); //computes the length dynamically
     let manual_string = ""; //here the complete manual gets concatinated
