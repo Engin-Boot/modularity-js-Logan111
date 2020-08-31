@@ -1,7 +1,5 @@
-
 const expect = require('chai').expect;
 const indexref = require("./index")
-
 
 function testNumberToPair(number, expectedMajor, expectedMinor) {
     const pairOfColors = indexref.GetColorFromPairNumber(number);
