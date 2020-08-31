@@ -1,5 +1,3 @@
-const expect = require('chai').expect;
-
 const MajorColors = [
     "white",
     "red",
@@ -7,7 +5,6 @@ const MajorColors = [
     "yellow",
     "violet"
 ];
-
 const MinorColors = [
     "blue",
     "orange",
@@ -15,7 +12,6 @@ const MinorColors = [
     "brown",
     "slate"
 ];
-
 function GetColorFromPairNumber(pairNumber) {
     let colorPair = {};
     const zeroBasedPairNumber = pairNumber - 1;
@@ -25,38 +21,18 @@ function GetColorFromPairNumber(pairNumber) {
     colorPair.minor = MinorColors[zeroBasedPairNumber % MinorColors.length];
     return colorPair
 }
-
 function GetPairNumberFromColors(majorColor, minorColor) {
-    let majorIndex = 0;
-    let minorIndex = 0;
-    for(majorIndex = 0; majorIndex < MajorColors.length; majorIndex++) {
-        if(MajorColors[majorIndex] == majorColor) {
-            break;
-        }
-    }
-    for(minorIndex = 0; minorIndex < MinorColors.length; minorIndex++) {
-        if(MinorColors[minorIndex] == minorColor) {
-            break;
-        }
-    }
+    let majorIndex = MajorColors.indexOf(majorColor);
+    let minorIndex = MinorColors.indexOf(minorColor);
     return majorIndex * MinorColors.length + minorIndex + 1;
 }
-
-function testNumberToPair(number, expectedMajor, expectedMinor) {
-    const pairOfColors = GetColorFromPairNumber(number);
-    console.log(`${number} = ${expectedMajor} ${expectedMinor}`);
-    expect(pairOfColors.major).equals(expectedMajor);
-    expect(pairOfColors.minor).equals(expectedMinor);
+function ToString(){ 
+    let manual_entries = (MajorColors.length) * (MinorColors.length); //computes the length dynamically
+    let manual_string = ""; //here the complete manual gets concatinated
+    for(let pair_num=1 ; pair_num<= manual_entries; pair_num++){
+        const colorpair =  GetColorFromPairNumber(pair_num);
+        manual_string = manual_string + pair_num + " - " + colorpair.major + " , " + colorpair.minor + " \n" ;
+    }
+    console.log(manual_string); //printing the concatinated manual
 }
-
-function testColorToNumber(majorColor, minorColor, expectedNumber) {
-    const pairNumber = GetPairNumberFromColors(majorColor, minorColor);
-    console.log(`${majorColor} ${minorColor} = ${pairNumber}`);
-    expect(pairNumber).to.equal(expectedNumber);
-}
-
-console.log("color coder");
-testNumberToPair(4, "white", "brown");
-testNumberToPair(25, "violet", "slate");
-testColorToNumber("black", "brown", 14);
-testColorToNumber("yellow", "green", 18);
+module.exports = {GetColorFromPairNumber,GetPairNumberFromColors,ToString}
